@@ -1,8 +1,11 @@
 use tauri::{
     menu::{Menu, MenuItem},
     tray::{MouseButton, MouseButtonState, TrayIconBuilder, TrayIconEvent},
-    ActivationPolicy, AppHandle, Manager,
+    AppHandle, Manager,
 };
+
+#[cfg(target_os = "macos")]
+use tauri::ActivationPolicy;
 use tauri_plugin_shell::ShellExt;
 
 #[cfg(target_os = "macos")]
