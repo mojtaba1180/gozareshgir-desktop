@@ -63,7 +63,7 @@ jobs:
           key: ${{ matrix.target }}
 
       - name: Install Frontend Dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build Desktop Application (Tauri Action)
         uses: tauri-apps/tauri-action@v0
