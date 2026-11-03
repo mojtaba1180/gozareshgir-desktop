@@ -1,0 +1,24 @@
+[package]
+name = "gozareshgir-desktop"
+version = "0.1.0"
+description = "Gozareshgir Desktop Task Tracker"
+authors = ["Mojtaba Asghari"]
+edition = "2021"
+
+[lib]
+name = "gozareshgir_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "devtools"] }
+tauri-plugin-shell = "2"
+tauri-plugin-http = { version = "2", features = ["unsafe-headers"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2 = "0.6"
+objc2-app-kit = { version = "0.3", features = ["NSWindow", "NSPanel"] }

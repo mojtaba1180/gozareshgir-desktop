@@ -1,0 +1,14 @@
+# Node & Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Rust & Tauri
+src-tauri/target/
+**/target/
+
+# OS specific
+.DS_Store
+Thumbs.db
+*.log
